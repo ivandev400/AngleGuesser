@@ -1,0 +1,17 @@
+input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e7e0ed;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  padding-right: 0.5rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b342f4;
+  box-shadow: 0 0 0 4px rgba(112, 57, 109, 0.2);
+}

@@ -1,0 +1,10 @@
+<input 
+  type="text" 
+  [value]="value" 
+  (input)="onInputChange($event)"
+  [disabled]="disabled"
+  placeholder="First Last"
+>
+<app-message [error]="warningMessage()" severity="warning"></app-message>
+<app-message [error]="successMessage()" severity="success"></app-message>
+<app-message [error]="errorMessage()" severity="error"></app-message>

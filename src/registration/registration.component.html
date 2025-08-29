@@ -1,0 +1,29 @@
+@if(isRegistrationOpen()){
+<div class="container">
+  <form [formGroup]="fg" (ngSubmit)="StartGame()" class="main-form">
+    <label class="form-label">
+      First and Last Name:
+      <app-name-fields
+        [minLen]="6"
+        [maxLen]="20"
+        formControlName="nameFields"
+      ></app-name-fields>
+    </label>
+    <br />
+
+    <label class="form-label">
+      Nickname:
+      <input formControlName="nickName" class="form-input" />
+      <app-message [error]="warningMessage()" severity="warning"></app-message>
+    </label>
+    <br />
+    <app-message [error]="successMessage()" severity="success"></app-message>
+    <app-message [error]="errorMessage()" severity="error"></app-message>
+
+    <button type="button" (click)="clear()" class="btn btn-clear">Clear</button>
+    <button type="submit" class="btn btn-save">Start the game</button>
+  </form>
+</div>
+} @if(isGameStarted()){
+<app-playground></app-playground>
+}

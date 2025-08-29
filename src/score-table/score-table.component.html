@@ -1,0 +1,31 @@
+<table *ngIf="scores().length > 0">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Nickname</th>
+      <th>Level</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="your-score">
+      <td colspan="4" class="section-label">YOU</td>
+    </tr>
+    <tr *ngFor="let score of scores()">
+      <td>{{ score.fullName }}</td>
+      <td>{{ score.nickName }}</td>
+      <td>{{ score.level }}</td>
+      <td>{{ score.averageAccuracy | number : '1.1-1' }}%</td>
+    </tr>
+
+    <tr class="other-players">
+      <td colspan="4" class="section-label">OTHER PLAYERS</td>
+    </tr>
+    <tr *ngFor="let mockScore of mockScores">
+      <td>{{ mockScore.fullName }}</td>
+      <td>{{ mockScore.nickName }}</td>
+      <td>{{ mockScore.level }}</td>
+      <td>{{ mockScore.averageAccuracy | number : '1.1-1' }}%</td>
+    </tr>
+  </tbody>
+</table>
